@@ -83,5 +83,5 @@ y_hat = model.predict(x_test, batch_size=64)
 y_pred = np.argmax(y_hat,axis=1)
 with open(output_file, 'w') as f :
     f.write('ImageId,Label\n')
-    for i in range(len(y_pred)) :
+    for i, value in enumerate(y_pred) :
         f.write("".join([str(i+1),',',str(y_pred[i]),'\n']))
